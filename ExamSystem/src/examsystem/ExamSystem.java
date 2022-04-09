@@ -46,6 +46,11 @@ public class ExamSystem extends javax.swing.JFrame {
 
         btnT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnT.setText("Teacher");
+        btnT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnT, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 317, 98));
 
         jLabel2.setBackground(new java.awt.Color(51, 255, 51));
@@ -65,6 +70,12 @@ public class ExamSystem extends javax.swing.JFrame {
         st.show();
         dispose();
     }//GEN-LAST:event_btnSActionPerformed
+
+    private void btnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTActionPerformed
+        Teacher exT = new Teacher();
+        exT.show();
+        dispose();
+    }//GEN-LAST:event_btnTActionPerformed
 
     /**
      * @param args the command line arguments
