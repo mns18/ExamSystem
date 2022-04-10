@@ -39,7 +39,7 @@ public class Teacher extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        TLoginB = new javax.swing.JButton();
         sNew = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -130,9 +130,14 @@ public class Teacher extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setText("Password");
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setText("Login");
+        TLoginB.setBackground(new java.awt.Color(51, 153, 0));
+        TLoginB.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        TLoginB.setText("Login");
+        TLoginB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TLoginBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout sLoginLayout = new javax.swing.GroupLayout(sLogin);
         sLogin.setLayout(sLoginLayout);
@@ -151,7 +156,7 @@ public class Teacher extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(sLoginLayout.createSequentialGroup()
                         .addGap(230, 230, 230)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TLoginB, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(208, Short.MAX_VALUE))
         );
         sLoginLayout.setVerticalGroup(
@@ -168,7 +173,7 @@ public class Teacher extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TLoginB, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(155, Short.MAX_VALUE))
         );
 
@@ -238,6 +243,12 @@ public class Teacher extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void TLoginBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TLoginBActionPerformed
+        Teacher_Home tHome = new Teacher_Home();
+        tHome.show();
+        dispose();
+    }//GEN-LAST:event_TLoginBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,7 +288,7 @@ public class Teacher extends javax.swing.JFrame {
     private javax.swing.JTabbedPane SLON;
     private javax.swing.JButton SNew;
     private javax.swing.JButton Slogin;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton TLoginB;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
