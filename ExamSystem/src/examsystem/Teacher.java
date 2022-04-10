@@ -42,6 +42,18 @@ public class Teacher extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         sNew = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jPasswordField2 = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -140,7 +152,7 @@ public class Teacher extends javax.swing.JFrame {
                     .addGroup(sLoginLayout.createSequentialGroup()
                         .addGap(230, 230, 230)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
         sLoginLayout.setVerticalGroup(
             sLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,25 +175,47 @@ public class Teacher extends javax.swing.JFrame {
         SLON.addTab("Login", sLogin);
 
         sNew.setMaximumSize(new java.awt.Dimension(623, 660));
+        sNew.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("New");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel3.setText("Create An Account");
+        sNew.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 510, 70));
+        sNew.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 270, 40));
+        sNew.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 270, 40));
+        sNew.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 270, 40));
+        sNew.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 270, 40));
 
-        javax.swing.GroupLayout sNewLayout = new javax.swing.GroupLayout(sNew);
-        sNew.setLayout(sNewLayout);
-        sNewLayout.setHorizontalGroup(
-            sNewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sNewLayout.createSequentialGroup()
-                .addContainerGap(395, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(239, 239, 239))
-        );
-        sNewLayout.setVerticalGroup(
-            sNewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sNewLayout.createSequentialGroup()
-                .addGap(173, 173, 173)
-                .addComponent(jLabel3)
-                .addContainerGap(527, Short.MAX_VALUE))
-        );
+        jPasswordField2.setText("jPasswordField2");
+        sNew.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 270, 40));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel7.setText("ID");
+        sNew.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 100, 30));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setText("Batch");
+        sNew.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 100, 30));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setText("Number");
+        sNew.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 100, 30));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setText("Password");
+        sNew.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 120, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setText("Email");
+        sNew.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 100, 30));
+
+        jButton3.setBackground(new java.awt.Color(51, 51, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton3.setText("Create");
+        sNew.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/pexels-pixabay-66869 (1).jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        sNew.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 640, 710));
 
         SLON.addTab("New Account", sNew);
 
@@ -245,14 +279,26 @@ public class Teacher extends javax.swing.JFrame {
     private javax.swing.JButton Slogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel sLogin;
     private javax.swing.JPanel sNew;
     // End of variables declaration//GEN-END:variables
