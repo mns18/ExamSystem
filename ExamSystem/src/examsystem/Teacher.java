@@ -5,6 +5,8 @@
  */
 package examsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author manas18
@@ -247,6 +249,7 @@ public class Teacher extends javax.swing.JFrame {
         Teacher_Home tHome = new Teacher_Home();
         tHome.show();
         dispose();
+        JOptionPane.showMessageDialog(null, "Loging successfull..!");
     }//GEN-LAST:event_TLoginBActionPerformed
 
     /**
