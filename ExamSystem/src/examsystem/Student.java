@@ -5,8 +5,11 @@
  */
 package examsystem;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -44,8 +47,8 @@ public class Student extends javax.swing.JFrame {
         sLogin = new javax.swing.JPanel();
         sLogin1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        sLoginEmailF = new javax.swing.JTextField();
+        sLoginPassF = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         sLoginBtn = new javax.swing.JButton();
@@ -136,10 +139,8 @@ public class Student extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 153, 51));
         jLabel2.setText("Login");
         sLogin1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 114, 307, 73));
-        sLogin1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 291, 338, 59));
-
-        jPasswordField1.setText("jPasswordField1");
-        sLogin1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 419, 338, 58));
+        sLogin1.add(sLoginEmailF, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 291, 338, 59));
+        sLogin1.add(sLoginPassF, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 419, 338, 58));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Email Or Id");
@@ -190,8 +191,6 @@ public class Student extends javax.swing.JFrame {
         sNew1.add(sEmailF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 270, 40));
         sNew1.add(sIDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 270, 40));
         sNew1.add(sFNameF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 270, 40));
-
-        sPassF.setText("jPasswordField2");
         sNew1.add(sPassF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 270, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -271,7 +270,39 @@ public class Student extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void sLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sLoginBtnActionPerformed
-        // TODO add your handling code here:
+        
+        //Log in System For Student
+        String sLEmail = sLoginEmailF.getText();
+        String sLPass = sLoginPassF.getText();
+        String line = "";
+        try{
+            
+            FileReader fr = new FileReader("C:/ProgramData/ExamSystem/Login.csv");
+            BufferedReader br = new BufferedReader(fr);
+            
+            while((line = br.readLine()) != null){
+                String[] lInformetion = line.split(",");
+                if(sLEmail.equals(lInformetion[0])){
+                    
+                    if(sLPass.equals(lInformetion[4])){
+                        //JOptionPane.showMessageDialog(null, sLPass.equals(lInformetion[4]));
+                        Student_Home stdHome = new Student_Home();
+                        stdHome.show();
+                        dispose();
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Incorrect Password Or Email!", "Password Type",JOptionPane.ERROR_MESSAGE);
+                       break;
+                    }
+                    
+                }
+                
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_sLoginBtnActionPerformed
 
     private void sCreateAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sCreateAFActionPerformed
@@ -286,6 +317,10 @@ public class Student extends javax.swing.JFrame {
        if(!aLoginData.exists()){
                try {
                    aLoginData.createNewFile();
+                   
+                       BufferedWriter ALoginDHeader = new BufferedWriter(new FileWriter(aLoginData.getAbsoluteFile()));
+                       ALoginDHeader.write("Email" + "," + "Student ID" + "," + "Name" + "," + "Number" + "," + "Password" + "\n");
+                       ALoginDHeader.close();
                } catch (IOException ex) {
                    Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
                }
@@ -299,9 +334,9 @@ public class Student extends javax.swing.JFrame {
            String spass = sPassF.getText();
            
            FileWriter fw = new FileWriter(aLoginData.getAbsolutePath(), true);
-           BufferedWriter br = new BufferedWriter(fw);
-           br.write(sEmail  + sId  + sFName + snum  + "," +spass + "\n");
-           br.close();
+           BufferedWriter bw = new BufferedWriter(fw);
+           bw.write(sEmail  + sId  + sFName + snum  + "," +spass + "\n");
+           bw.close();
        
        }catch (IOException ex) {
                 Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
@@ -365,8 +400,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton sCreateAF;
     private javax.swing.JTextField sEmailF;
     private javax.swing.JTextField sFNameF;
@@ -374,6 +407,8 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JPanel sLogin;
     private javax.swing.JPanel sLogin1;
     private javax.swing.JButton sLoginBtn;
+    private javax.swing.JTextField sLoginEmailF;
+    private javax.swing.JPasswordField sLoginPassF;
     private javax.swing.JPanel sNew;
     private javax.swing.JPanel sNew1;
     private javax.swing.JTextField sNumF;
