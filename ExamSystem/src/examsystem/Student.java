@@ -5,6 +5,14 @@
  */
 package examsystem;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author manas18
@@ -40,21 +48,21 @@ public class Student extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        sLoginBtn = new javax.swing.JButton();
         sNew = new javax.swing.JPanel();
         sNew1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        sNumF = new javax.swing.JTextField();
+        sEmailF = new javax.swing.JTextField();
+        sIDF = new javax.swing.JTextField();
+        sFNameF = new javax.swing.JTextField();
+        sPassF = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        sCreateAF = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,15 +149,15 @@ public class Student extends javax.swing.JFrame {
         jLabel5.setText("Password");
         sLogin1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 366, 152, 44));
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sLoginBtn.setBackground(new java.awt.Color(51, 153, 0));
+        sLoginBtn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        sLoginBtn.setText("Login");
+        sLoginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sLoginBtnActionPerformed(evt);
             }
         });
-        sLogin1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 512, 146, 53));
+        sLogin1.add(sLoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 512, 146, 53));
 
         javax.swing.GroupLayout sLoginLayout = new javax.swing.GroupLayout(sLogin);
         sLogin.setLayout(sLoginLayout);
@@ -178,21 +186,21 @@ public class Student extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel3.setText("Create An Account");
         sNew1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 510, 70));
-        sNew1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 270, 40));
-        sNew1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 270, 40));
-        sNew1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 270, 40));
-        sNew1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 270, 40));
+        sNew1.add(sNumF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 270, 40));
+        sNew1.add(sEmailF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 270, 40));
+        sNew1.add(sIDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 270, 40));
+        sNew1.add(sFNameF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 270, 40));
 
-        jPasswordField2.setText("jPasswordField2");
-        sNew1.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 270, 40));
+        sPassF.setText("jPasswordField2");
+        sNew1.add(sPassF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 270, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setText("ID");
         sNew1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 100, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel8.setText("Batch");
-        sNew1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 100, 30));
+        jLabel8.setText("Full Name");
+        sNew1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("Number");
@@ -206,10 +214,15 @@ public class Student extends javax.swing.JFrame {
         jLabel11.setText("Email");
         sNew1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 100, 30));
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton3.setText("Create");
-        sNew1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, -1, -1));
+        sCreateAF.setBackground(new java.awt.Color(51, 51, 255));
+        sCreateAF.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        sCreateAF.setText("Create");
+        sCreateAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sCreateAFActionPerformed(evt);
+            }
+        });
+        sNew1.add(sCreateAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/pexels-pixabay-66869 (1).jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -257,9 +270,48 @@ public class Student extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void sLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sLoginBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_sLoginBtnActionPerformed
+
+    private void sCreateAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sCreateAFActionPerformed
+       //Create Exam System File If it does not exist.
+        File examSystem = new File("C:/ProgramData" + "//ExamSystem");
+       File aLoginData = new File(examSystem.getAbsolutePath()+ "//Login.csv");
+       if(!examSystem.exists()){
+           examSystem.mkdir();
+           
+       }
+       //Create All student Login Data file If it does not exist.
+       if(!aLoginData.exists()){
+               try {
+                   aLoginData.createNewFile();
+               } catch (IOException ex) {
+                   Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+               }
+           }
+       //Add Create New Account data in CSV File..
+       try{
+           String sEmail = sEmailF.getText() + ",";
+           String sId = sIDF.getText() + ",";
+           String sFName = sFNameF.getText() + ",";
+           String snum = sNumF.getText();
+           String spass = sPassF.getText();
+           
+           FileWriter fw = new FileWriter(aLoginData.getAbsolutePath(), true);
+           BufferedWriter br = new BufferedWriter(fw);
+           br.write(sEmail  + sId  + sFName + snum  + "," +spass + "\n");
+           br.close();
+       
+       }catch (IOException ex) {
+                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+       
+       
+        
+        JOptionPane.showMessageDialog(null, "Account Created!");
+    }//GEN-LAST:event_sCreateAFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,9 +352,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTabbedPane SLON;
     private javax.swing.JButton SNew;
     private javax.swing.JButton Slogin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -316,15 +366,17 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton sCreateAF;
+    private javax.swing.JTextField sEmailF;
+    private javax.swing.JTextField sFNameF;
+    private javax.swing.JTextField sIDF;
     private javax.swing.JPanel sLogin;
     private javax.swing.JPanel sLogin1;
+    private javax.swing.JButton sLoginBtn;
     private javax.swing.JPanel sNew;
     private javax.swing.JPanel sNew1;
+    private javax.swing.JTextField sNumF;
+    private javax.swing.JPasswordField sPassF;
     // End of variables declaration//GEN-END:variables
 }
