@@ -289,6 +289,7 @@ public class Student extends javax.swing.JFrame {
                         Student_Home stdHome = new Student_Home();
                         stdHome.show();
                         dispose();
+                        break;
                         
                     }else{
                         JOptionPane.showMessageDialog(null, "Incorrect Password Or Email!", "Password Type",JOptionPane.ERROR_MESSAGE);

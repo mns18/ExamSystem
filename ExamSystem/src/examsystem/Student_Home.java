@@ -26,31 +26,483 @@ public class Student_Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        sHomeMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        sPanleHOme = new javax.swing.JButton();
+        sResultBtn = new javax.swing.JButton();
+        sJoinExamBtn = new javax.swing.JButton();
+        sProfileBtn = new javax.swing.JButton();
+        sLogOutBtn = new javax.swing.JButton();
+        sPanle = new javax.swing.JTabbedPane();
+        sPanleWelcome = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        CNQWmessage = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        sRelultPanle = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        CNQHome = new javax.swing.JTabbedPane();
+        cNQFirstPage = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        UnderLineCNQHome = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        cNQSecPage = new javax.swing.JPanel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        sNExamPnale = new javax.swing.JPanel();
+        tRSPanle1 = new javax.swing.JPanel();
+        tQHeading = new javax.swing.JLabel();
+        SprofilePnale = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Student Home Page");
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 3));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        sHomeMenu.setBackground(new java.awt.Color(102, 102, 255));
+        sHomeMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204), 3));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/Logo.png"))); // NOI18N
+
+        sPanleHOme.setText("Home");
+        sPanleHOme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sPanleHOmeActionPerformed(evt);
+            }
+        });
+
+        sResultBtn.setText("Result");
+        sResultBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sResultBtnActionPerformed(evt);
+            }
+        });
+
+        sJoinExamBtn.setText("Profile");
+        sJoinExamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sJoinExamBtnActionPerformed(evt);
+            }
+        });
+
+        sProfileBtn.setText("Connect New Exam");
+        sProfileBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sProfileBtnActionPerformed(evt);
+            }
+        });
+
+        sLogOutBtn.setText("LogOut");
+        sLogOutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sLogOutBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout sHomeMenuLayout = new javax.swing.GroupLayout(sHomeMenu);
+        sHomeMenu.setLayout(sHomeMenuLayout);
+        sHomeMenuLayout.setHorizontalGroup(
+            sHomeMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sHomeMenuLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(sHomeMenuLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(sHomeMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sPanleHOme, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sJoinExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sLogOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sResultBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        sHomeMenuLayout.setVerticalGroup(
+            sHomeMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sHomeMenuLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(sPanleHOme, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sResultBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sJoinExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sLogOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(sHomeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 296, 700));
+
+        sPanle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 153), 3));
+
+        sPanleWelcome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 153), 2));
+        sPanleWelcome.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 660, -1));
+
+        CNQWmessage.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        CNQWmessage.setForeground(new java.awt.Color(0, 0, 153));
+        CNQWmessage.setText("Welcome Back");
+        sPanleWelcome.add(CNQWmessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 510, 140));
+
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204), 2));
+        sPanleWelcome.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 460, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/green-background-21874-22427-hd-wallpapers.jpg"))); // NOI18N
+        sPanleWelcome.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 660, 690));
+
+        sPanle.addTab("tab4", sPanleWelcome);
+
+        sRelultPanle.setMaximumSize(new java.awt.Dimension(658, 720));
+        sRelultPanle.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setBackground(new java.awt.Color(255, 0, 102));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel5.setText("    Make A New Question");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
+        sRelultPanle.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 27, 658, 124));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setText("All Results");
+
+        UnderLineCNQHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 153), 2));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ExamType", "Course Code", "Marks", "Total Marks"
+            }
+        ));
+        jTable1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTable1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout cNQFirstPageLayout = new javax.swing.GroupLayout(cNQFirstPage);
+        cNQFirstPage.setLayout(cNQFirstPageLayout);
+        cNQFirstPageLayout.setHorizontalGroup(
+            cNQFirstPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQFirstPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
+            .addGroup(cNQFirstPageLayout.createSequentialGroup()
+                .addGroup(cNQFirstPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cNQFirstPageLayout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(UnderLineCNQHome, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cNQFirstPageLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        cNQFirstPageLayout.setVerticalGroup(
+            cNQFirstPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cNQFirstPageLayout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(UnderLineCNQHome)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        CNQHome.addTab("Question", cNQFirstPage);
+
+        cNQSecPage.setMaximumSize(new java.awt.Dimension(658, 600));
+
+        jTextField7.setBorder(null);
+
+        jTextField8.setBorder(null);
+
+        jTextField9.setBorder(null);
+
+        jTextField10.setBorder(null);
+
+        jTextField11.setBorder(null);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setText("1");
+        jLabel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setText("2");
+        jLabel15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel16.setText("4");
+        jLabel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel17.setText("3");
+        jLabel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel18.setText("Enter Your Question: ");
+
+        jTextField12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField12.setBorder(null);
+
+        jButton1.setText("Show");
+        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel19.setText("Question Number:");
+
+        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jLabel20.setText("Answer Index");
+
+        jButton2.setText("Next");
+
+        javax.swing.GroupLayout cNQSecPageLayout = new javax.swing.GroupLayout(cNQSecPage);
+        cNQSecPage.setLayout(cNQSecPageLayout);
+        cNQSecPageLayout.setHorizontalGroup(
+            cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
+                .addGap(0, 28, Short.MAX_VALUE)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(26, 26, 26)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                        .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(cNQSecPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField7)
+                    .addGroup(cNQSecPageLayout.createSequentialGroup()
+                        .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
+                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58))))))
+            .addGroup(cNQSecPageLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
+        );
+        cNQSecPageLayout.setVerticalGroup(
+            cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cNQSecPageLayout.createSequentialGroup()
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cNQSecPageLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)))
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cNQSecPageLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(18, 18, 18))
+                    .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cNQSecPageLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel17))
+                    .addGroup(cNQSecPageLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        CNQHome.addTab("Question Bio", cNQSecPage);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        CNQHome.addTab("tab3", jPanel4);
+
+        sRelultPanle.add(CNQHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 650, 750));
+
+        sPanle.addTab("tab2", sRelultPanle);
+
+        tQHeading.setBackground(new java.awt.Color(255, 0, 102));
+        tQHeading.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        tQHeading.setText("            All Question");
+        tQHeading.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
+
+        javax.swing.GroupLayout tRSPanle1Layout = new javax.swing.GroupLayout(tRSPanle1);
+        tRSPanle1.setLayout(tRSPanle1Layout);
+        tRSPanle1Layout.setHorizontalGroup(
+            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tRSPanle1Layout.createSequentialGroup()
+                .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        tRSPanle1Layout.setVerticalGroup(
+            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tRSPanle1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(567, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout sNExamPnaleLayout = new javax.swing.GroupLayout(sNExamPnale);
+        sNExamPnale.setLayout(sNExamPnaleLayout);
+        sNExamPnaleLayout.setHorizontalGroup(
+            sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 658, Short.MAX_VALUE)
+            .addGroup(sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(sNExamPnaleLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        sNExamPnaleLayout.setVerticalGroup(
+            sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 721, Short.MAX_VALUE)
+            .addGroup(sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(sNExamPnaleLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        sPanle.addTab("tab3", sNExamPnale);
+
+        jLabel4.setBackground(new java.awt.Color(255, 0, 102));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel4.setText("    All Student's Results");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
+
+        javax.swing.GroupLayout SprofilePnaleLayout = new javax.swing.GroupLayout(SprofilePnale);
+        SprofilePnale.setLayout(SprofilePnaleLayout);
+        SprofilePnaleLayout.setHorizontalGroup(
+            SprofilePnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SprofilePnaleLayout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        SprofilePnaleLayout.setVerticalGroup(
+            SprofilePnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SprofilePnaleLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(568, Short.MAX_VALUE))
+        );
+
+        sPanle.addTab("tab1", SprofilePnale);
+
+        jPanel1.add(sPanle, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, -60, 660, 760));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sPanleHOmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sPanleHOmeActionPerformed
+        sPanle.setSelectedIndex(0);
+    }//GEN-LAST:event_sPanleHOmeActionPerformed
+
+    private void sResultBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sResultBtnActionPerformed
+        sPanle.setSelectedIndex(1);//Create A New Question
+        CNQHome.setSelectedIndex(0);
+    }//GEN-LAST:event_sResultBtnActionPerformed
+
+    private void sJoinExamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sJoinExamBtnActionPerformed
+        sPanle.setSelectedIndex(2);//All Question
+    }//GEN-LAST:event_sJoinExamBtnActionPerformed
+
+    private void sProfileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sProfileBtnActionPerformed
+        sPanle.setSelectedIndex(3);//Result
+
+    }//GEN-LAST:event_sProfileBtnActionPerformed
+
+    private void sLogOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sLogOutBtnActionPerformed
+        ExamSystem tLO = new ExamSystem();//Log Out
+        tLO.show();
+        dispose();
+    }//GEN-LAST:event_sLogOutBtnActionPerformed
+
+    private void jTable1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1AncestorAdded
 
     /**
      * @param args the command line arguments
@@ -88,6 +540,50 @@ public class Student_Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane CNQHome;
+    private javax.swing.JLabel CNQWmessage;
+    private javax.swing.JPanel SprofilePnale;
+    private javax.swing.JLabel UnderLineCNQHome;
+    private javax.swing.JPanel cNQFirstPage;
+    private javax.swing.JPanel cNQSecPage;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel sHomeMenu;
+    private javax.swing.JButton sJoinExamBtn;
+    private javax.swing.JButton sLogOutBtn;
+    private javax.swing.JPanel sNExamPnale;
+    private javax.swing.JTabbedPane sPanle;
+    private javax.swing.JButton sPanleHOme;
+    private javax.swing.JPanel sPanleWelcome;
+    private javax.swing.JButton sProfileBtn;
+    private javax.swing.JPanel sRelultPanle;
+    private javax.swing.JButton sResultBtn;
+    private javax.swing.JLabel tQHeading;
+    private javax.swing.JPanel tRSPanle1;
     // End of variables declaration//GEN-END:variables
 }

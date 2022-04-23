@@ -352,12 +352,12 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="CNQHomeNext" min="-2" pref="95" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jTextField1" alignment="1" pref="398" max="32767" attributes="0"/>
-                                                  <Component id="jTextField3" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jTextField4" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jTextField2" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="tCName" alignment="1" pref="398" max="32767" attributes="0"/>
+                                                  <Component id="tCCode" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="tCSection" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="tCBatch" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="tCExamtype" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="tCExamCode" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -379,32 +379,32 @@
                                   <Component id="UnderLineCNQHome" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCName" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField3" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCCode" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField4" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCSection" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField2" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCBatch" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCExamCode" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField5" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="tCExamtype" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -434,13 +434,13 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField1">
+                        <Component class="javax.swing.JTextField" name="tCName">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField2">
+                        <Component class="javax.swing.JTextField" name="tCBatch">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField3">
+                        <Component class="javax.swing.JTextField" name="tCCode">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField4">
+                        <Component class="javax.swing.JTextField" name="tCSection">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel3">
                           <Properties>
@@ -464,17 +464,17 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel9">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Total Marks"/>
+                            <Property name="text" type="java.lang.String" value="Exam code"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel10">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Total Time"/>
+                            <Property name="text" type="java.lang.String" value="Exam Type"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField5">
+                        <Component class="javax.swing.JTextField" name="tCExamtype">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField6">
+                        <Component class="javax.swing.JTextField" name="tCExamCode">
                         </Component>
                         <Component class="javax.swing.JButton" name="CNQHomeNext">
                           <Properties>
