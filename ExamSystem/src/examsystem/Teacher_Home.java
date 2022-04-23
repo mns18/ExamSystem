@@ -6,7 +6,12 @@
 package examsystem;
 
 import static java.awt.PageAttributes.MediaType.C;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,22 +74,23 @@ public class Teacher_Home extends javax.swing.JFrame {
         tCExamCode = new javax.swing.JTextField();
         CNQHomeNext = new javax.swing.JButton();
         cNQSecPage = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        tCQQuestionLable = new javax.swing.JTextField();
+        tCQOPtion4 = new javax.swing.JTextField();
+        tCQOPtion3 = new javax.swing.JTextField();
+        tCQOption2 = new javax.swing.JTextField();
+        tCQOption1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        tCQQnNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        tCQQans = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        tCQFinishBTN = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         qPanle = new javax.swing.JPanel();
         tRSPanle1 = new javax.swing.JPanel();
@@ -312,15 +318,15 @@ public class Teacher_Home extends javax.swing.JFrame {
 
         cNQSecPage.setMaximumSize(new java.awt.Dimension(658, 600));
 
-        jTextField7.setBorder(null);
+        tCQQuestionLable.setBorder(null);
 
-        jTextField8.setBorder(null);
+        tCQOPtion4.setBorder(null);
 
-        jTextField9.setBorder(null);
+        tCQOPtion3.setBorder(null);
 
-        jTextField10.setBorder(null);
+        tCQOption2.setBorder(null);
 
-        jTextField11.setBorder(null);
+        tCQOption1.setBorder(null);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("1");
@@ -341,27 +347,49 @@ public class Teacher_Home extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel18.setText("Enter Your Question: ");
 
-        jTextField12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField12.setBorder(null);
+        tCQQnNumber.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        tCQQnNumber.setBorder(null);
+        tCQQnNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tCQQnNumberActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Show");
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Question Number:");
 
-        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tCQQans.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel20.setText("Answer Index");
 
         jButton2.setText("Next");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        tCQFinishBTN.setText("Finish");
+        tCQFinishBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tCQFinishBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cNQSecPageLayout = new javax.swing.GroupLayout(cNQSecPage);
         cNQSecPage.setLayout(cNQSecPageLayout);
         cNQSecPageLayout.setHorizontalGroup(
             cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
-                .addGap(0, 23, Short.MAX_VALUE)
+                .addGap(0, 28, Short.MAX_VALUE)
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -370,14 +398,14 @@ public class Teacher_Home extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tCQOPtion4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                        .addComponent(tCQOption1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(tCQOPtion3, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tCQOption2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(cNQSecPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField7)
+                    .addComponent(tCQQuestionLable)
                     .addGroup(cNQSecPageLayout.createSequentialGroup()
                         .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
@@ -386,13 +414,15 @@ public class Teacher_Home extends javax.swing.JFrame {
                         .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tCQQnNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58))))))
             .addGroup(cNQSecPageLayout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tCQQans, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(tCQFinishBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2))
@@ -410,36 +440,38 @@ public class Teacher_Home extends javax.swing.JFrame {
                         .addComponent(jLabel18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cNQSecPageLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tCQQnNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)))
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tCQQuestionLable, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tCQOption1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cNQSecPageLayout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addGap(18, 18, 18))
-                    .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tCQOption2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cNQSecPageLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel17))
                     .addGroup(cNQSecPageLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tCQOPtion3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tCQOPtion4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tCQQans, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cNQSecPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(tCQFinishBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         CNQHome.addTab("Question Bio", cNQSecPage);
@@ -571,11 +603,12 @@ public class Teacher_Home extends javax.swing.JFrame {
     private void tPanleHOmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tPanleHOmeActionPerformed
         tPanle.setSelectedIndex(0);//HOme
     }//GEN-LAST:event_tPanleHOmeActionPerformed
-    String tCourseName, tCourseCode, tCourseSec, tBatch, tExamCode, tExamType;
+    String tCourseName, tCourseCode, tCourseSec, tBatch, tExamCode, tExamType, tQuestionPath;
+     int tQCount = 1;   
         
-        
-        
-    
+/**************************************************************************************************************
+ *                                          Question Information Receive
+ **************************************************************************************************************/
     
     //Create A New Question first Page Next Button..............
     private void CNQHomeNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQHomeNextActionPerformed
@@ -594,6 +627,7 @@ public class Teacher_Home extends javax.swing.JFrame {
         tExamCode = tCExamCode.getText();
         tExamCode = tExamCode + ".csv";
         File fileExamcode = new File(fileExamType, tExamCode);
+        tQuestionPath = fileExamcode.getAbsolutePath();
     
         tCourseName =tCName.getText();
         
@@ -649,6 +683,7 @@ public class Teacher_Home extends javax.swing.JFrame {
             }
         }
             CNQHome.setSelectedIndex(1);
+            tCQQnNumber.setText(String.valueOf(tQCount));//Display Question Count..........
         }
         
         
@@ -658,6 +693,78 @@ public class Teacher_Home extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_CNQHomeNextActionPerformed
+/********************************************************************************************************
+                                            Question Receive
+*********************************************************************************************************/
+    
+    
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+           tCQQnNumber.setText(String.valueOf(tQCount));//Display Question Count.........         
+        //Receive Data from Textfield..............
+        
+        
+        String tQQuestion, tQoption1, tQoption2, tQOption3, tQOption4, tQOptionAns;
+        
+        tQQuestion = tCQQuestionLable.getText();
+        tQoption1 = tCQOption1.getText();
+        tQoption2 = tCQOption2.getText();
+        tQOption3 =tCQOPtion3.getText();
+        tQOption4 = tCQOPtion4.getText();
+        tQOptionAns = tCQQans.getText();
+        
+        //Make sure anti-epty file........................................
+        
+        if(tQQuestion.equals("") || tQoption1.equals("") || tQoption2.equals("") || tQOption3.equals("") ||tQOption4.equals("") || tQOptionAns.equals("")){
+            if(tQQuestion.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae Insert A Question!");
+            } else if(tQoption1.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae Set Option One!");
+            }else if(tQoption2.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae Set Option Two!");
+            }else if(tQOption3.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae Set Option Three!");
+            }else if(tQOption4.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae Set Option Four!");
+            }else if(tQOptionAns.equals("")){
+                JOptionPane.showMessageDialog(null, "Pleae A Question ans Without spase!");
+            } 
+        }else{
+            //Write Data in cvs file...................
+        
+            try{
+                
+                FileWriter fw = new FileWriter(tQuestionPath,true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(tQQuestion + "," + tQoption1+ "," + tQoption2+ "," + tQOption3 + "," + tQOption4 + "," + tQOptionAns +"\n");
+                bw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+            tQCount++;
+            tCQQnNumber.setText(String.valueOf(tQCount));//Display Question Count.........
+        }
+        //make sure empty file..............................
+        tCQQuestionLable.setText("");
+        tCQOption1.setText("");
+        tCQOption2.setText("");
+        tCQOPtion3.setText("");
+        tCQOPtion4.setText("");
+        tCQQans.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tCQQnNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCQQnNumberActionPerformed
+       
+    }//GEN-LAST:event_tCQQnNumberActionPerformed
+
+    private void tCQFinishBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCQFinishBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tCQFinishBTNActionPerformed
+   
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -729,13 +836,6 @@ public class Teacher_Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton qCreate;
     private javax.swing.JPanel qPanle;
     private javax.swing.JTextField tCBatch;
@@ -743,7 +843,15 @@ public class Teacher_Home extends javax.swing.JFrame {
     private javax.swing.JTextField tCExamCode;
     private javax.swing.JTextField tCExamtype;
     private javax.swing.JTextField tCName;
+    private javax.swing.JButton tCQFinishBTN;
     private javax.swing.JPanel tCQMenu;
+    private javax.swing.JTextField tCQOPtion3;
+    private javax.swing.JTextField tCQOPtion4;
+    private javax.swing.JTextField tCQOption1;
+    private javax.swing.JTextField tCQOption2;
+    private javax.swing.JTextField tCQQans;
+    private javax.swing.JTextField tCQQnNumber;
+    private javax.swing.JTextField tCQQuestionLable;
     private javax.swing.JTextField tCSection;
     private javax.swing.JButton tLogout;
     private javax.swing.JTabbedPane tPanle;
