@@ -67,8 +67,19 @@ public class Student_Home extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         sNExamPnale = new javax.swing.JPanel();
+        sCNEPage = new javax.swing.JTabbedPane();
         tRSPanle1 = new javax.swing.JPanel();
         tQHeading = new javax.swing.JLabel();
+        sJNEName = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        tQHeading1 = new javax.swing.JLabel();
         SprofilePnale = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -393,47 +404,92 @@ public class Student_Home extends javax.swing.JFrame {
 
         sPanle.addTab("tab2", sRelultPanle);
 
+        sNExamPnale.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tRSPanle1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tQHeading.setBackground(new java.awt.Color(255, 0, 102));
         tQHeading.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        tQHeading.setText("            All Question");
+        tQHeading.setText("          Join A New EXAM");
         tQHeading.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
+        tRSPanle1.add(tQHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 658, 124));
 
-        javax.swing.GroupLayout tRSPanle1Layout = new javax.swing.GroupLayout(tRSPanle1);
-        tRSPanle1.setLayout(tRSPanle1Layout);
-        tRSPanle1Layout.setHorizontalGroup(
-            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tRSPanle1Layout.createSequentialGroup()
-                .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        sJNEName.setText("Name");
+        sJNEName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                sJNENameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                sJNENameFocusLost(evt);
+            }
+        });
+        tRSPanle1.add(sJNEName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 230, 40));
+
+        jTextField4.setText("Joining Code");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        tRSPanle1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 230, 40));
+
+        jTextField5.setText("ID");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        tRSPanle1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 230, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("ID");
+        tRSPanle1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 160, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("Joining Code");
+        tRSPanle1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 160, 30));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setText("Full Name: ");
+        tRSPanle1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 196, 160, 30));
+
+        jButton3.setText("Join");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        tRSPanle1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 482, -1, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/ezgif-2-728c0a8f71.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        tRSPanle1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 710));
+
+        sCNEPage.addTab("tab2", tRSPanle1);
+
+        tQHeading1.setBackground(new java.awt.Color(255, 0, 102));
+        tQHeading1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        tQHeading1.setText("  Answer Those Questions");
+        tQHeading1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(tQHeading1, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        tRSPanle1Layout.setVerticalGroup(
-            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tRSPanle1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(567, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(tQHeading1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 583, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout sNExamPnaleLayout = new javax.swing.GroupLayout(sNExamPnale);
-        sNExamPnale.setLayout(sNExamPnaleLayout);
-        sNExamPnaleLayout.setHorizontalGroup(
-            sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 658, Short.MAX_VALUE)
-            .addGroup(sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(sNExamPnaleLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        sNExamPnaleLayout.setVerticalGroup(
-            sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 721, Short.MAX_VALUE)
-            .addGroup(sNExamPnaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(sNExamPnaleLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        sCNEPage.addTab("tab1", jPanel2);
+
+        sNExamPnale.add(sCNEPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 740));
 
         sPanle.addTab("tab3", sNExamPnale);
 
@@ -490,7 +546,7 @@ public class Student_Home extends javax.swing.JFrame {
     }//GEN-LAST:event_sJoinExamBtnActionPerformed
 
     private void sProfileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sProfileBtnActionPerformed
-        sPanle.setSelectedIndex(3);//Result
+        sPanle.setSelectedIndex(2);//Result
 
     }//GEN-LAST:event_sProfileBtnActionPerformed
 
@@ -503,6 +559,30 @@ public class Student_Home extends javax.swing.JFrame {
     private void jTable1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1AncestorAdded
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void sJNENameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sJNENameFocusGained
+        if((sJNEName.getText()).equals("Name")){
+            sJNEName.setText("");
+        }
+    }//GEN-LAST:event_sJNENameFocusGained
+
+    private void sJNENameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sJNENameFocusLost
+         if((sJNEName.getText()).equals("")){
+            sJNEName.setText("Name");
+        }
+    }//GEN-LAST:event_sJNENameFocusLost
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        sCNEPage.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -548,6 +628,7 @@ public class Student_Home extends javax.swing.JFrame {
     private javax.swing.JPanel cNQSecPage;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -560,9 +641,14 @@ public class Student_Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
@@ -570,10 +656,14 @@ public class Student_Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTabbedPane sCNEPage;
     private javax.swing.JPanel sHomeMenu;
+    private javax.swing.JTextField sJNEName;
     private javax.swing.JButton sJoinExamBtn;
     private javax.swing.JButton sLogOutBtn;
     private javax.swing.JPanel sNExamPnale;
@@ -584,6 +674,7 @@ public class Student_Home extends javax.swing.JFrame {
     private javax.swing.JPanel sRelultPanle;
     private javax.swing.JButton sResultBtn;
     private javax.swing.JLabel tQHeading;
+    private javax.swing.JLabel tQHeading1;
     private javax.swing.JPanel tRSPanle1;
     // End of variables declaration//GEN-END:variables
 }
