@@ -733,7 +733,7 @@ public class Teacher_Home extends javax.swing.JFrame {
         try {
             FileWriter fw = new FileWriter(fileFHPathandCode, true);
              BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(tCBatch.getText() + "," +tCourseCode + "," + tCSection.getText() + ","+ tCExamtype.getText() + "," +java.time.LocalDate.now() + ","  + temcode + "," + tQuestionPath + "\n");
+            bw.write(tCBatch.getText() + "," +tCourseCode + "," + tCSection.getText() + ","+ tCExamtype.getText() + "," +java.time.LocalDate.now() + ","  + temcode + "," + fileExamcode.getAbsolutePath() + "\n");
             bw.close();
         } catch (IOException ex) {
             Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);

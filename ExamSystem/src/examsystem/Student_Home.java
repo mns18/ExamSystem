@@ -7,6 +7,9 @@ package examsystem;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -77,12 +80,12 @@ public class Student_Home extends javax.swing.JFrame {
         tRSPanle1 = new javax.swing.JPanel();
         tQHeading = new javax.swing.JLabel();
         sJNEName = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        sNExamcodeField = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        cNExamBTN = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         tQHeading1 = new javax.swing.JLabel();
@@ -441,13 +444,13 @@ public class Student_Home extends javax.swing.JFrame {
         });
         tRSPanle1.add(sJNEName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 230, 40));
 
-        jTextField4.setText("Joining Code");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        sNExamcodeField.setText("Joining Code");
+        sNExamcodeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                sNExamcodeFieldActionPerformed(evt);
             }
         });
-        tRSPanle1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 230, 40));
+        tRSPanle1.add(sNExamcodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 230, 40));
 
         jTextField5.setText("ID");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -469,13 +472,13 @@ public class Student_Home extends javax.swing.JFrame {
         jLabel8.setText("Full Name: ");
         tRSPanle1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 196, 160, 30));
 
-        jButton3.setText("Join");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cNExamBTN.setText("Join");
+        cNExamBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cNExamBTNActionPerformed(evt);
             }
         });
-        tRSPanle1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 482, -1, 40));
+        tRSPanle1.add(cNExamBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 482, -1, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examsystem/Image/ezgif-2-728c0a8f71.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -489,8 +492,6 @@ public class Student_Home extends javax.swing.JFrame {
         tQHeading1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 153), 3));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton2.setText("Next");
-
 
         buttonGroup1.add(jRadioButton1);
 
@@ -502,7 +503,7 @@ public class Student_Home extends javax.swing.JFrame {
 
         jButton4.setText("Slect & Show");
 
-        //jButton6.setText("Next");
+        jButton6.setText("Next");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -651,9 +652,9 @@ public class Student_Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void sNExamcodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNExamcodeFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_sNExamcodeFieldActionPerformed
 
     private void sJNENameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sJNENameFocusGained
         if((sJNEName.getText()).equals("Name")){
@@ -666,21 +667,39 @@ public class Student_Home extends javax.swing.JFrame {
             sJNEName.setText("Name");
         }
     }//GEN-LAST:event_sJNENameFocusLost
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        sCNEPage.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton3ActionPerformed
+String[] rowForCodeS;
+    private void cNExamBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNExamBTNActionPerformed
+        String srcLineForcode = sNExamcodeField.getText();
+        try {
+            FileReader fileForReadCode = new FileReader("C:/ProgramData/ExamSystem/ExamCodePath.csv");
+            BufferedReader bReaderForCodeC = new BufferedReader(fileForReadCode);
+            Object[] LineForCode = bReaderForCodeC.lines().toArray();
+            for(int n = 0; n < LineForCode.length; n++){
+                rowForCodeS = LineForCode[n].toString().split(",");
+                if(srcLineForcode.equals(rowForCodeS[5])){
+                   JOptionPane.showMessageDialog(null, rowForCodeS[6]);
+                    sCNEPage.setSelectedIndex(1);
+                }
+            }
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_cNExamBTNActionPerformed
 int i = 0;
 
 
-    String path = "C:/ProgramData/ExamSystem/Question/lkdsjlf/lksjdlfj/ldsjf/lkjdslk/ljsdalkj.csv";
+    
             FileReader fr;
             BufferedReader bw ;
+            //String path = "C:/ProgramData/ExamSystem/Question/ladsjlfj/lsdjlafjl/lkasdjfl;asjdflf/fljalsdjfl/lsakdjfalj.csv";
 
     public void questionvew(){
         String lineNo = "";
+        
         try {
-            fr = new FileReader(path);
+            fr = new FileReader(rowForCodeS[6]);
             bw = new BufferedReader(fr);
             Object[] line = bw.lines().toArray();
 
@@ -695,7 +714,7 @@ int i = 0;
 
                 //initComponents();
                 jLabel10.setText(question);
-                jLabel9.setText(question);
+                jLabel9.setText(rowForCodeS[3]);
                 jRadioButton1.setText(option1);
                 jRadioButton2.setText(option2);
                 jRadioButton3.setText(option3);
@@ -770,11 +789,11 @@ int i = 0;
     private javax.swing.JPanel SprofilePnale;
     private javax.swing.JLabel UnderLineCNQHome;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton cNExamBTN;
     private javax.swing.JPanel cNQFirstPage;
     private javax.swing.JPanel cNQSecPage;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -812,7 +831,6 @@ int i = 0;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
@@ -823,6 +841,7 @@ int i = 0;
     private javax.swing.JButton sJoinExamBtn;
     private javax.swing.JButton sLogOutBtn;
     private javax.swing.JPanel sNExamPnale;
+    private javax.swing.JTextField sNExamcodeField;
     private javax.swing.JTabbedPane sPanle;
     private javax.swing.JButton sPanleHOme;
     private javax.swing.JPanel sPanleWelcome;
