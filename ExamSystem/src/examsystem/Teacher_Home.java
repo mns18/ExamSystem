@@ -94,7 +94,7 @@ public class Teacher_Home extends javax.swing.JFrame {
         tCQFinishBTN = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         qPanle = new javax.swing.JPanel();
-        tRSPanle1 = new javax.swing.JPanel();
+        tRQestionsPanel = new javax.swing.JPanel();
         tQHeading = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tAQuestionsTable = new javax.swing.JTable();
@@ -505,10 +505,7 @@ public class Teacher_Home extends javax.swing.JFrame {
 
         tAQuestionsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Batch", "Course Code", "Section", "Exam Type", "Date", "Joining Code"
@@ -520,31 +517,31 @@ public class Teacher_Home extends javax.swing.JFrame {
 
         jButton3.setText("View");
 
-        javax.swing.GroupLayout tRSPanle1Layout = new javax.swing.GroupLayout(tRSPanle1);
-        tRSPanle1.setLayout(tRSPanle1Layout);
-        tRSPanle1Layout.setHorizontalGroup(
-            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tRSPanle1Layout.createSequentialGroup()
+        javax.swing.GroupLayout tRQestionsPanelLayout = new javax.swing.GroupLayout(tRQestionsPanel);
+        tRQestionsPanel.setLayout(tRQestionsPanelLayout);
+        tRQestionsPanelLayout.setHorizontalGroup(
+            tRQestionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tRQestionsPanelLayout.createSequentialGroup()
                 .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tRSPanle1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tRQestionsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(tRSPanle1Layout.createSequentialGroup()
+            .addGroup(tRQestionsPanelLayout.createSequentialGroup()
                 .addGap(190, 190, 190)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        tRSPanle1Layout.setVerticalGroup(
-            tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tRSPanle1Layout.createSequentialGroup()
+        tRQestionsPanelLayout.setVerticalGroup(
+            tRQestionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tRQestionsPanelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(tQHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(tRSPanle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tRQestionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
@@ -560,7 +557,7 @@ public class Teacher_Home extends javax.swing.JFrame {
             .addGroup(qPanleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(qPanleLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tRQestionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         qPanleLayout.setVerticalGroup(
@@ -569,7 +566,7 @@ public class Teacher_Home extends javax.swing.JFrame {
             .addGroup(qPanleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(qPanleLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tRSPanle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tRQestionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -625,9 +622,7 @@ public class Teacher_Home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_tLogoutActionPerformed
 
-    private void aQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aQuestionActionPerformed
-        tPanle.setSelectedIndex(2);//All Question
-    }//GEN-LAST:event_aQuestionActionPerformed
+
 
     private void SNew2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SNew2ActionPerformed
         // TODO add your handling code here:
@@ -727,50 +722,58 @@ public class Teacher_Home extends javax.swing.JFrame {
         if(!fileFHPathandCode.exists()){
             try {
                 fileFHPathandCode.createNewFile();
-                String temcodePath = tCExamCode.getText();
                 
-                FileWriter fw = new FileWriter(fileFHPathandCode,true);
-                try (BufferedWriter bw = new BufferedWriter(fw)) { 
-                    bw.write("Code" + "," + "Path" + "\n");
-                    bw.write(temcodePath + "," + tQuestionPath + "\n");
-                    bw.close();
-                }
                 
             } catch (IOException ex) {
                 Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-        }else{
-            String temcodePath = tCExamCode.getText();
-            try {
-                FileWriter fw = new FileWriter(fileFHPathandCode,true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(temcodePath + "," + tQuestionPath + "\n");
-                
-            } catch (IOException ex) {
-                Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        }
+        String temcode = tCExamCode.getText();
+        try {
+            FileWriter fw = new FileWriter(fileFHPathandCode, true);
+             BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(tCBatch.getText() + "," +tCourseCode + "," + tCSection.getText() + ","+ tCExamtype.getText() + "," +java.time.LocalDate.now() + ","  + temcode + "," + tQuestionPath + "\n");
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
-        //Result Table expor..................
-        String tresultexportLine = tBatch+ "," + tCourseSec + "," + tCourseSec + "," +tExamType + "," +java.time.LocalDate.now() +","+tCExamCode.getText() ;
-        DefaultTableModel tAQtable = (DefaultTableModel)tAQuestionsTable.getModel();
-        String[] row = tresultexportLine.toString().split(",");
-        tAQtable.addRow(row);
+            try {
+                FileReader fileReadForQuestionsList = new FileReader(fileFHPathandCode);
+                BufferedReader filReaderQuestionb = new BufferedReader(fileReadForQuestionsList);
+                
+                Object[] tResultLine = filReaderQuestionb.lines().toArray();
+                 for(int i = 0; i < tResultLine.length; i++){
+                 //String tresultexportLine = tBatch+ "," + tCourseSec + "," + tCourseSec + "," +tExamType + "," +java.time.LocalDate.now() +","+tCExamCode.getText() ;
+                 DefaultTableModel tAQtable = (DefaultTableModel)tAQuestionsTable.getModel();
+                 String[] row = tResultLine[i].toString().split(",");
+                 String[] row1 ={row[0], row[1], row[2], row[3], row[4], row[5]};
+                 //tAQtable.addRow(row);
+                 tAQtable.addRow(row1);
+                 
+                 }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         
             CNQHome.setSelectedIndex(1);
             tCQQnNumber.setText(String.valueOf(tQCount));//Display Question Count..........
         }
-        
-        
-        
-        
-        
-        
+
         
     }//GEN-LAST:event_CNQHomeNextActionPerformed
-/********************************************************************************************************
+
+
+
+    private void aQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aQuestionActionPerformed
+        tPanle.setSelectedIndex(2);//All Question
+    }//GEN-LAST:event_aQuestionActionPerformed
+
+    
+    /********************************************************************************************************
                                             Question Receive
 *********************************************************************************************************/
     
@@ -812,9 +815,9 @@ public class Teacher_Home extends javax.swing.JFrame {
             try{
                 
                 FileWriter fw = new FileWriter(tQuestionPath,true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(tQQuestion + "," + tQoption1+ "," + tQoption2+ "," + tQOption3 + "," + tQOption4 + "," + tQOptionAns +"\n");
-                bw.close();
+                try (BufferedWriter bw = new BufferedWriter(fw)) {
+                    bw.write(tQQuestion + "," + tQoption1+ "," + tQoption2+ "," + tQOption3 + "," + tQOption4 + "," + tQOptionAns +"\n");
+                }
             } catch (IOException ex) {
                 Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -939,7 +942,7 @@ public class Teacher_Home extends javax.swing.JFrame {
     private javax.swing.JButton tPanleHOme;
     private javax.swing.JPanel tPanleWelcome;
     private javax.swing.JLabel tQHeading;
+    private javax.swing.JPanel tRQestionsPanel;
     private javax.swing.JPanel tRSPanle;
-    private javax.swing.JPanel tRSPanle1;
     // End of variables declaration//GEN-END:variables
 }
