@@ -5,11 +5,16 @@
 package examsystem;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,7 +25,7 @@ public class Student_Home extends javax.swing.JFrame {
     /**
      * Creates new form Student_Home
      */
-    public String question, option1, option2, option3, option4, ans, sGivenAns;
+    public String question, option1, option2, option3, option4, ans, sGivenAns,sPdataholder, sID,sName, sExamCrcCode, sMarks, sTotalMarks;
     int tExamTMarks = 0;
     public Student_Home() {
         initComponents();
@@ -57,7 +62,7 @@ public class Student_Home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         UnderLineCNQHome = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableForSRes = new javax.swing.JTable();
         cNQSecPage = new javax.swing.JPanel();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -82,7 +87,7 @@ public class Student_Home extends javax.swing.JFrame {
         tQHeading = new javax.swing.JLabel();
         sJNEName = new javax.swing.JTextField();
         sNExamcodeField = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        sIDGetTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -219,27 +224,24 @@ public class Student_Home extends javax.swing.JFrame {
 
         UnderLineCNQHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 153), 2));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableForSRes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ExamType", "Course Code", "Marks", "Total Marks"
             }
         ));
-        jTable1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tableForSRes.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTable1AncestorAdded(evt);
+                tableForSResAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableForSRes);
 
         javax.swing.GroupLayout cNQFirstPageLayout = new javax.swing.GroupLayout(cNQFirstPage);
         cNQFirstPage.setLayout(cNQFirstPageLayout);
@@ -250,14 +252,12 @@ public class Student_Home extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(189, 189, 189))
             .addGroup(cNQFirstPageLayout.createSequentialGroup()
-                .addGroup(cNQFirstPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cNQFirstPageLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(UnderLineCNQHome, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cNQFirstPageLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(122, 122, 122)
+                .addComponent(UnderLineCNQHome, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(163, Short.MAX_VALUE))
+            .addGroup(cNQFirstPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1))
         );
         cNQFirstPageLayout.setVerticalGroup(
             cNQFirstPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,13 +453,13 @@ public class Student_Home extends javax.swing.JFrame {
         });
         tRSPanle1.add(sNExamcodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 230, 40));
 
-        jTextField5.setText("ID");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        sIDGetTextField.setText("ID");
+        sIDGetTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                sIDGetTextFieldActionPerformed(evt);
             }
         });
-        tRSPanle1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 230, 40));
+        tRSPanle1.add(sIDGetTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 230, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("ID");
@@ -665,13 +665,13 @@ public class Student_Home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_sLogOutBtnActionPerformed
 
-    private void jTable1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable1AncestorAdded
+    private void tableForSResAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tableForSResAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1AncestorAdded
+    }//GEN-LAST:event_tableForSResAncestorAdded
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void sIDGetTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sIDGetTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_sIDGetTextFieldActionPerformed
 
     private void sNExamcodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNExamcodeFieldActionPerformed
         // TODO add your handling code here:
@@ -693,6 +693,8 @@ String PathForQNex;
 String tEtitleforQheading;
     private void cNExamBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNExamBTNActionPerformed
         String srcLineForcode = sNExamcodeField.getText();
+        sID = sIDGetTextField.getText();
+        sName = sJNEName.getText();
         
         try {
             FileReader fileForReadCode = new FileReader("C:/ProgramData/ExamSystem/ExamCodePath.csv");
@@ -703,7 +705,9 @@ String tEtitleforQheading;
                 if(srcLineForcode.equals(rowForCodeS[5])){
                    PathForQNex =  rowForCodeS[6];
                    tEtitleforQheading = rowForCodeS[3];
+                   sExamCrcCode = rowForCodeS[1];
                     sCNEPage.setSelectedIndex(1);
+                    
                 }
             }
             
@@ -722,6 +726,8 @@ int i = 0;
 
     public void questionvew(){
         String lineNo = "";
+        
+        
         
         try {
             fr1 = new FileReader(PathForQNex);
@@ -755,6 +761,7 @@ int i = 0;
                 sPanle.setSelectedIndex(1);//Create A New Question
         CNQHome.setSelectedIndex(0);
         JOptionPane.showMessageDialog(null, tExamTMarks +" Of " + i);
+        InserAndExportSPRes();
         i = 0;
         tExamTMarks = 0;
         
@@ -771,6 +778,7 @@ int i = 0;
         jRadioButton4.setText("");
         methoderForMark();
         questionvew();
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -804,6 +812,76 @@ int i = 0;
     }
     
     void InserAndExportSPRes(){
+        String temDatar = sID+".csv";
+        File FolderForSPResH = new File("C:/ProgramData/ExamSystem", "All Student Result");
+        File fileforSPersonalR = new File(FolderForSPResH, temDatar);
+        File fileForIDAndResH = new File("C:/ProgramData/ExamSystem","StudentIDPATH.csv");
+        FileWriter fileForHoldIDPth;
+        BufferedWriter bWriterForIDPth;
+        BufferedWriter bWriterForSMarks;
+        sMarks =String.valueOf(tExamTMarks);
+        FileWriter fileWriteForMarks;
+        String[] sResShowRow;
+
+        
+        Object[] lineForSShowTable;
+        sTotalMarks = String.valueOf(i);
+        if(!FolderForSPResH.exists()){
+            FolderForSPResH.mkdir();
+            
+        }
+        if(!fileforSPersonalR.exists()){
+            try {
+                fileforSPersonalR.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(!fileForIDAndResH.exists()){
+            try {
+                fileForIDAndResH.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        try {
+            fileForHoldIDPth = new FileWriter(fileForIDAndResH, true);
+            bWriterForIDPth = new BufferedWriter(fileForHoldIDPth);
+            bWriterForIDPth.write(sID + "," + fileforSPersonalR.getAbsolutePath() + "\n");
+            bWriterForIDPth.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            fileWriteForMarks = new FileWriter(fileforSPersonalR,true);
+            bWriterForSMarks = new BufferedWriter(fileWriteForMarks);
+            bWriterForSMarks.write(tEtitleforQheading + "," + sExamCrcCode + "," + sMarks + "," + sTotalMarks + "\n");
+            bWriterForSMarks.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            FileReader fileReadForMarkShw = new FileReader(fileforSPersonalR);
+            BufferedReader bReaderForMarkShw = new BufferedReader(fileReadForMarkShw);
+            lineForSShowTable = bReaderForMarkShw.lines().toArray();
+            DefaultTableModel tblForSR = (DefaultTableModel)tableForSRes.getModel();
+            for(int n = 0; n < lineForSShowTable.length; n++){
+                sResShowRow = lineForSShowTable[n].toString().split(",");
+                tblForSR.addRow(sResShowRow);
+            }
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Student_Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        JOptionPane.showMessageDialog(null, sName + "   " + sID);
+    }
+    
+    
+    void teacherResultInPutOut(){
         
     }
     public static void main(String args[]) {
@@ -881,17 +959,16 @@ int i = 0;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTabbedPane sCNEPage;
     private javax.swing.JPanel sHomeMenu;
+    private javax.swing.JTextField sIDGetTextField;
     private javax.swing.JTextField sJNEName;
     private javax.swing.JButton sJoinExamBtn;
     private javax.swing.JButton sLogOutBtn;
@@ -906,5 +983,6 @@ int i = 0;
     private javax.swing.JLabel tQHeading;
     private javax.swing.JLabel tQHeading1;
     private javax.swing.JPanel tRSPanle1;
+    private javax.swing.JTable tableForSRes;
     // End of variables declaration//GEN-END:variables
 }

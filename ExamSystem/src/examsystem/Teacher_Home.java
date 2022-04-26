@@ -636,7 +636,7 @@ public class Teacher_Home extends javax.swing.JFrame {
     private void tPanleHOmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tPanleHOmeActionPerformed
         tPanle.setSelectedIndex(0);//HOme
     }//GEN-LAST:event_tPanleHOmeActionPerformed
-    String tCourseName, tCourseCode, tCourseSec, tBatch, tExamCode, tExamType, tQuestionPath;
+    String tCourseName, tCourseCode, tCourseSec, tBatch, tExamCode, tExamType, tQuestionPath, tAResultFilePath;
      int tQCount = 1;   
         
 /**************************************************************************************************************
@@ -662,7 +662,8 @@ public class Teacher_Home extends javax.swing.JFrame {
         tExamCode = tExamCode + ".csv";
         File fileExamcode = new File(fileExamType, tExamCode);
         tQuestionPath = fileExamcode.getAbsolutePath();
-        
+        File fileForAStudentResH = new File(fileExamType, "Resust.csv");
+        tAResultFilePath = fileForAStudentResH.getAbsolutePath();
         tCourseName =tCName.getText();
         
         
@@ -717,6 +718,13 @@ public class Teacher_Home extends javax.swing.JFrame {
                 Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if(!fileForAStudentResH.exists()){
+            try {
+                fileForAStudentResH.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
         //Qourse Code And Path callect.......................
         if(!fileFHPathandCode.exists()){
@@ -733,7 +741,7 @@ public class Teacher_Home extends javax.swing.JFrame {
         try {
             FileWriter fw = new FileWriter(fileFHPathandCode, true);
              BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(tCBatch.getText() + "," +tCourseCode + "," + tCSection.getText() + ","+ tCExamtype.getText() + "," +java.time.LocalDate.now() + ","  + temcode + "," + fileExamcode.getAbsolutePath() + "\n");
+            bw.write(tCBatch.getText() + "," +tCourseCode + "," + tCSection.getText() + ","+ tCExamtype.getText() + "," +java.time.LocalDate.now() + ","  + temcode + "," + fileExamcode.getAbsolutePath() + ","  + tAResultFilePath +"\n");
             bw.close();
         } catch (IOException ex) {
             Logger.getLogger(Teacher_Home.class.getName()).log(Level.SEVERE, null, ex);
