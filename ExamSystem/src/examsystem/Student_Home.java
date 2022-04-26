@@ -20,7 +20,8 @@ public class Student_Home extends javax.swing.JFrame {
     /**
      * Creates new form Student_Home
      */
-    public String question, option1, option2, option3, option4, ans;
+    public String question, option1, option2, option3, option4, ans, sGivenAns;
+    int tExamTMarks = 0;
     public Student_Home() {
         initComponents();
     }
@@ -494,12 +495,32 @@ public class Student_Home extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton3);
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton4);
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Slect & Show");
 
@@ -668,8 +689,11 @@ public class Student_Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sJNENameFocusLost
 String[] rowForCodeS;
+String PathForQNex;
+String tEtitleforQheading;
     private void cNExamBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNExamBTNActionPerformed
         String srcLineForcode = sNExamcodeField.getText();
+        
         try {
             FileReader fileForReadCode = new FileReader("C:/ProgramData/ExamSystem/ExamCodePath.csv");
             BufferedReader bReaderForCodeC = new BufferedReader(fileForReadCode);
@@ -677,7 +701,8 @@ String[] rowForCodeS;
             for(int n = 0; n < LineForCode.length; n++){
                 rowForCodeS = LineForCode[n].toString().split(",");
                 if(srcLineForcode.equals(rowForCodeS[5])){
-                   JOptionPane.showMessageDialog(null, rowForCodeS[6]);
+                   PathForQNex =  rowForCodeS[6];
+                   tEtitleforQheading = rowForCodeS[3];
                     sCNEPage.setSelectedIndex(1);
                 }
             }
@@ -691,30 +716,30 @@ int i = 0;
 
 
     
-            FileReader fr;
-            BufferedReader bw ;
+            FileReader fr1;
+            BufferedReader bw1 ;
             //String path = "C:/ProgramData/ExamSystem/Question/ladsjlfj/lsdjlafjl/lkasdjfl;asjdflf/fljalsdjfl/lsakdjfalj.csv";
 
     public void questionvew(){
         String lineNo = "";
         
         try {
-            fr = new FileReader(rowForCodeS[6]);
-            bw = new BufferedReader(fr);
-            Object[] line = bw.lines().toArray();
+            fr1 = new FileReader(PathForQNex);
+            bw1 = new BufferedReader(fr1);
+            Object[] line = bw1.lines().toArray();
 
             if(i < line.length){
-                String[] row = line[i].toString().split(",");
-                //JOptionPane.showMessageDialog(null, row[0]);
-                question = row[0];
-                option1 = row[1];
-                option2 = row[2];
-                option3 = row[3];
-                option4 = row[4];
+                String[] row1 = line[i].toString().split(",");
+                question = row1[0];
+                option1 = row1[1];
+                option2 = row1[2];
+                option3 = row1[3];
+                option4 = row1[4];
+                ans = row1[5];
 
                 //initComponents();
                 jLabel10.setText(question);
-                jLabel9.setText(rowForCodeS[3]);
+                jLabel9.setText(tEtitleforQheading);
                 jRadioButton1.setText(option1);
                 jRadioButton2.setText(option2);
                 jRadioButton3.setText(option3);
@@ -729,7 +754,10 @@ int i = 0;
             }else{
                 sPanle.setSelectedIndex(1);//Create A New Question
         CNQHome.setSelectedIndex(0);
+        JOptionPane.showMessageDialog(null, tExamTMarks +" Of " + i);
         i = 0;
+        tExamTMarks = 0;
+        
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -741,6 +769,7 @@ int i = 0;
         jRadioButton2.setText("");
         jRadioButton3.setText("");
         jRadioButton4.setText("");
+        methoderForMark();
         questionvew();
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -748,9 +777,35 @@ int i = 0;
         questionvew();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        sGivenAns = "1";
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        sGivenAns = "2";
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        sGivenAns = "3";
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        sGivenAns = "4";
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    void methoderForMark(){
+        if(ans.equals(sGivenAns)){
+            tExamTMarks++;
+        }
+    }
+    
+    void InserAndExportSPRes(){
+        
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
